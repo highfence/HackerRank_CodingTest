@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Warm Up">
+      <UniqueIdentifier>{194abc1c-6d76-44fd-be2a-5e558a1e84ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Search">
+      <UniqueIdentifier>{73db477c-afbe-4d74-a14f-d919dec1451a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="[171024] A Very Big Sum.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171024] Compare the Triplets.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171024] Diagonal Difference.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171024] Simple Array Sum.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171025] Plus Minus.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171025] Staircase.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171025] Mini-Max Sum.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171025] Birthday Cake Candles.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171025] Time Conversion.cpp">
+      <Filter>Warm Up</Filter>
+    </ClCompile>
+    <ClCompile Include="[171025] Hackerland Radio Transmitters.cpp">
+      <Filter>Search</Filter>
+    </ClCompile>
+    <ClCompile Include="[171025] Gridland Metro.cpp">
+      <Filter>Search</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
