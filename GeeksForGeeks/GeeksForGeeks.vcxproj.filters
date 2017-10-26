@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Practice">
+      <UniqueIdentifier>{c8a6c6a9-bc04-4441-b230-f5bcc27491c1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="[171027] Overlapping Intervals.cpp">
+      <Filter>Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="[171027] Binary String.cpp">
+      <Filter>Practice</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HackerRank", "HackerRank\HackerRank.vcxproj", "{BB669509-A785-43C8-ABFB-D16298DB6C3B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeeksForGeeks", "GeeksForGeeks\GeeksForGeeks.vcxproj", "{2C396057-94C9-4988-8FF9-08709FAEA45A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{BB669509-A785-43C8-ABFB-D16298DB6C3B}.Release|x64.Build.0 = Release|x64
 		{BB669509-A785-43C8-ABFB-D16298DB6C3B}.Release|x86.ActiveCfg = Release|Win32
 		{BB669509-A785-43C8-ABFB-D16298DB6C3B}.Release|x86.Build.0 = Release|Win32
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Debug|x64.ActiveCfg = Debug|x64
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Debug|x64.Build.0 = Debug|x64
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Debug|x86.ActiveCfg = Debug|Win32
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Debug|x86.Build.0 = Debug|Win32
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Release|x64.ActiveCfg = Release|x64
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Release|x64.Build.0 = Release|x64
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Release|x86.ActiveCfg = Release|Win32
+		{2C396057-94C9-4988-8FF9-08709FAEA45A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
