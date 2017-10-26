@@ -44,9 +44,37 @@ int main()
 		infoVec.push_back(newInfo);
 	}
 
-	
+	int ** landArray = new int*[row];
 
+	for (auto rowIdx = 0; rowIdx < row; ++rowIdx)
+	{
+		landArray[rowIdx] = new int[column];
+		fill_n(landArray[rowIdx], column, 0);
+	}
+
+	long long remainCells = row * column;
+	for (const auto& info : infoVec)
+	{
+		for (auto curColIdx = info._startCol - 1; curColIdx < info._endCol; ++curColIdx)
+		{
+			if (landArray[info._row - 1][curColIdx] != 1)
+			{
+				landArray[info._row - 1][curColIdx] = 1;
+				--remainCells;
+			}
+		}
+	}
+
+	for (auto rowIdx = 0; rowIdx < row; ++rowIdx)
+	{
+		delete [] landArray[rowIdx];
+	}
+
+	delete [] landArray;
 
 	infoVec.clear();
+
+	cout << remainCells;
+
 	return 0;
 }
