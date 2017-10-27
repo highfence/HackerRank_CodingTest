@@ -7,6 +7,9 @@
     <Filter Include="Search">
       <UniqueIdentifier>{73db477c-afbe-4d74-a14f-d919dec1451a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GeeksForGeeks">
+      <UniqueIdentifier>{2f67c19c-3ca2-48d1-8da2-ded41274c2a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="[171024] A Very Big Sum.cpp">
@@ -41,6 +44,12 @@
     </ClCompile>
     <ClCompile Include="[171025] Gridland Metro.cpp">
       <Filter>Search</Filter>
+    </ClCompile>
+    <ClCompile Include="[171027] Binary String.cpp">
+      <Filter>GeeksForGeeks</Filter>
+    </ClCompile>
+    <ClCompile Include="[171027] Overlapping Intervals.cpp">
+      <Filter>GeeksForGeeks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,2 +1,1 @@
-﻿  [171027] Overlapping Intervals.cpp
-  GeeksForGeeks.vcxproj -> C:\Dev\HackerRank\Debug\GeeksForGeeks.exe
+﻿LINK : fatal error LNK1561: 진입점이 정의되어야 합니다.
