@@ -1,35 +1,57 @@
 #include <cmath>
 #include <cstdio>
 #include <vector>
+#include <stack>
 #include <iostream>
 #include <algorithm>
 using namespace std;
 
 // https://www.hackerrank.com/challenges/gridland-metro/problem
 
-class TrainInfo
+struct Interval
 {
-public :
-	TrainInfo(int row, int startCol, int endCol)
-		: _row(row), _startCol(startCol), _endCol(endCol) {}
-
-	int _row = 0;
-	int _startCol = 0;
-	int _endCol = 0;
+	int row;
+	int start;
+	int end;
 };
+
+// Interval에 대한 비교 함수 제공.
+bool compareInterval(Interval i1, Interval i2)
+{
+	if (i1.row < i2.row)
+	{
+		return true;
+	}
+	else if (i1.row == i2.row)
+	{
+		if (i1.start < i2.start)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
+}
 
 int main() 
 {
-	int row;
-	int column;
-	int trainNumber;
+	long row;
+	long column;
+	long trainNumber;
 
 	cin >> row;
 	cin >> column;
 	cin >> trainNumber;
 
-	vector<TrainInfo> infoVec;
+	vector<Interval> intervalVector;
 
+	// STDIN으로 들어오는 열차 정보 저장.
 	for (auto curTrainNumber = 0; curTrainNumber < trainNumber; ++curTrainNumber)
 	{
 		int trainRow;
@@ -40,39 +62,56 @@ int main()
 		cin >> trainStartIdx;
 		cin >> trainEndIdx;
 
-		TrainInfo newInfo(trainRow, trainStartIdx, trainEndIdx);
-		infoVec.push_back(newInfo);
+		Interval newInterval;
+		newInterval.row = trainRow;
+		newInterval.start = trainStartIdx;
+		newInterval.end = trainEndIdx;
+		
+		intervalVector.push_back(newInterval);
 	}
 
-	int ** landArray = new int*[row];
-
-	for (auto rowIdx = 0; rowIdx < row; ++rowIdx)
-	{
-		landArray[rowIdx] = new int[column];
-		fill_n(landArray[rowIdx], column, 0);
-	}
-
+	// 총 셀의 개수
 	long long remainCells = row * column;
-	for (const auto& info : infoVec)
+
+	// 만약 열차 정보가 없다면 그냥 출력하고 끝.
+	if (trainNumber <= 0)
 	{
-		for (auto curColIdx = info._startCol - 1; curColIdx < info._endCol; ++curColIdx)
+		cout << remainCells;
+		return 0;
+	}
+
+	// 열차 정보 받은 것을 소팅.
+	sort(intervalVector.begin(), intervalVector.end(), compareInterval);
+
+	int currentRow = intervalVector.front().row;
+	int currentStart = intervalVector.front().start;
+	int currentEnd = intervalVector.front().end;
+
+	for (const auto& intervalInfo : intervalVector)
+	{
+		// 만약 현재 들고있는 정보와 해당 정보의 Row가 같은지 확인.
+		if (currentRow == intervalInfo.row)
 		{
-			if (landArray[info._row - 1][curColIdx] != 1)
+			// 같은 Row의 정보라면 Merge가 가능한지 확인해준다.
+			if (currentEnd >= intervalInfo.start)
 			{
-				landArray[info._row - 1][curColIdx] = 1;
-				--remainCells;
+				// Merge하고 다음 Interval 정보로 넘어간다.
+				currentEnd = (currentEnd > intervalInfo.end) ? currentEnd : intervalInfo.end;
+				continue;
 			}
 		}
+
+		// Row가 다르거나, Merge가 불가능 한 경우,
+		// 들고있던 정보를 셀 개수에서 빼준 뒤, 새로운 정보를 든다.
+		remainCells -= (currentEnd - currentStart + 1);
+
+		currentRow = intervalInfo.row;
+		currentStart = intervalInfo.start;
+		currentEnd = intervalInfo.end;
 	}
 
-	for (auto rowIdx = 0; rowIdx < row; ++rowIdx)
-	{
-		delete [] landArray[rowIdx];
-	}
-
-	delete [] landArray;
-
-	infoVec.clear();
+	// 마지막으로 들고 있던 정보에 대해서도 처리.
+	remainCells -= (currentEnd - currentStart + 1);
 
 	cout << remainCells;
 
